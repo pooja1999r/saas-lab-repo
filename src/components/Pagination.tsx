@@ -5,7 +5,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: { currentPage: nu
     
   const [pageNumbers, setPageNumbers] = useState<{page: number, isSelected: boolean, symbol?: string}[]>([]);
 
-  const calculatePageNumbers = () =>{
+  const paginationRepresentation = () =>{
     setPageNumbers([]);
     if (totalPages <= 6) {
         // Show all pages if total pages are 6 or less
@@ -39,17 +39,17 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: { currentPage: nu
   }
   
   useEffect(() => {
-    calculatePageNumbers();
+    paginationRepresentation();
   }, [currentPage, totalPages]);
   
   return <div>
-    <button className="pagination-button" disabled={currentPage === 1} onClick={() => onPageChange(1)}>&#60;&#60;</button>
+    <button className="pagination-button" style={{margin: "0px", padding: "5px 7px"}} disabled={currentPage === 1} onClick={() => onPageChange(1)}>&#60;&#60;</button>
     <button className="pagination-button" disabled={currentPage === 1} onClick={() => onPageChange(currentPage - 1)}>&#60;</button>
     {pageNumbers && pageNumbers.map((item) => (
       <button className={`pagination-button pagination-hover ${item.isSelected ? "selected-page" : ""}`} onClick={() => onPageChange(item.page)}>{item.symbol ?? item.page}</button>
     ))}
     <button className="pagination-button" disabled={currentPage === totalPages} onClick={() => onPageChange(currentPage + 1)}>&#62;</button>
-    <button className="pagination-button" disabled={currentPage === totalPages} onClick={() => onPageChange(totalPages)}>&#62;&#62;</button>
+    <button className="pagination-button" style={{margin: "0px", padding: "5px 7px"}} disabled={currentPage === totalPages} onClick={() => onPageChange(totalPages)}>&#62;&#62;</button>
   </div>;
 }
 

@@ -1,8 +1,8 @@
 .App {
   display: flex;
-  justify-content: center; /* Center the child horizontally */
-  align-items: center; /* Center the child vertically (optional) */
-  width: 100%; /* Full width of the page */
-  height: 100vh; /* Full viewport height (optional) */
+  justify-content: center;
+  align-items: center; 
+  width: 100%; 
+  min-height: 100vh;
   background-color: rgb(233, 233, 233);
 }

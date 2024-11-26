@@ -1,0 +1,79 @@
+.parent-container {
+    width: 50% !important; /* 50% of App's width */
+    background-color: white; 
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    overflow: hidden; /* Add this to contain the table */
+  }
+
+.table-container {
+  background-color: black;
+  color: white;
+  border-collapse: collapse;
+  border-radius: 8px; /* Added border radius */
+  width: 100%; 
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Style table header */
+.table-container th {
+  background-color: #2c2c2c; /* Slightly darker for header */
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+  color: #ffffff; /* Text color */
+}
+
+.table-container tr {
+  cursor: pointer;
+  outline: 1px solid #2c2c2c;  /* Using outline instead of border */
+}
+
+/* Remove any existing cell borders if they exist */
+.table-container td,
+.table-container th {
+  border: none;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Hover effect for rows */
+.table-container tr:hover {
+  background-color: #333333; /* Highlight row on hover */
+}
+
+
+.table-pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+.pagination-select{
+  font-size: 14px;
+  color: rgb(49, 49, 49)
+}
+select{
+  margin: 0px 5px;
+  padding: 3px 0px;
+}
+/*  Responsive design */
+@media (max-width: 768px) {
+  .table-container {
+    max-width: 100%;
+    margin: 0 auto; /* Center the table */
+    display: block; /* Changed from table to block for better overflow handling */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Keep vertical overflow hidden */
+  }
+
+  .table-pagination-container {
+    display: block;
+    width: 100%;
+  }
+}
+

@@ -38,8 +38,14 @@ const Table = () => {
   }
 
   return <div className="parent-container">
-    <h2>Table Data Goes Here</h2>
-    {loading ? <div>Loading...</div> : tableData.length > 0 ? 
+    <h2>Funding & Pledge Statistics</h2>
+    {loading ? 
+    <>
+      <div className="table-loading">
+        SaaS
+      </div>
+      <p className="table-loading-text"> Loading SaasLabs Data...</p>
+    </> : tableData.length > 0 ? 
     (<><table className="table-container">
         <thead>
             <tr>

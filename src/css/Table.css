@@ -54,12 +54,20 @@
   margin-top: 5px;
 }
 .pagination-select{
-  font-size: 14px;
+  font-size: 12px;
   color: rgb(49, 49, 49)
 }
 select{
   margin: 0px 5px;
-  padding: 3px 0px;
+  padding: 2px 5px;
+  border: 1px solid rgb(199, 197, 197);
+  border-radius: 4px;
+  color: blue;
+}
+
+select:focus{
+  outline: none;
+  border: 1px solid rgb(120, 120, 120);
 }
 
 .table-loading {
